@@ -82,14 +82,14 @@ router.get('/', async (req, res) => {
                         // Send video thumbnail with caption
                         await KnightBot.sendMessage(userJid, {
                             image: { url: 'https://imgur.com/a/78tkN0y' },
-                            caption: `🎬 *Hasuki Bot MD V2.0 Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtu.be/-oz_u1iMgf8`
+                            caption: `🎬 *Hasuki Bot MD V1.0 !*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n`
                         });
                         console.log("🎬 Video guide sent successfully");
 
                         // Send warning message
                         await KnightBot.sendMessage(userJid, {
                             text: `⚠️Do not share this file with anybody⚠️\n 
-┌┤✑  Thanks for using Hqsuki Bot
+┌┤✑  Thanks for using Hasuki Bot
 │└────────────┈ ⳹        
 │© 2025 Zero Bug Zone 
 └─────────────────┈ ⳹\n\n`
@@ -179,5 +179,3 @@ process.on('uncaughtException', (err) => {
     if (e.includes("statusCode: 503")) return;
     console.log('Caught exception: ', err);
 });
-
-export default router;

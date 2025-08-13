@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Knight Bot - WhatsApp Linker</title>
+  <title>Hasuki Bot - WhatsApp Linker</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <style>
     :root {
@@ -11,8 +11,8 @@
       --secondary-color: #ffffff;
       --accent-color: #f0f0f0;
       --text-color: #000000;
-      --background-color: #ffffff;
-      --hover-color: #f5f5f5;
+      --background-color: hsl(0, 9%, 73%);
+      --hover-color: #e4e1e1;
       --border-color: rgba(0, 0, 0, 0.1);
     }
 
@@ -33,15 +33,15 @@
       padding: 15px;
     }
 
-    .container {
-      width: 100%;
-      max-width: 450px;
-      background: var(--background-color);
-      border-radius: 16px;
-      padding: 25px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--border-color);
-    }
+      .container {
+  width: 100%;
+  max-width: 450px;
+   background: linear-gradient(135deg, #741d1d 0%, #412806 100%);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
 
     .header {
       text-align: center;
@@ -144,7 +144,8 @@
     .copy-btn {
       width: 100%;
       padding: 12px;
-      background: var(--hover-color);
+       background: #0cee2a; /* Green colour */
+  border: none;
       border: 1.5px solid var(--border-color);
       border-radius: 12px;
       font-size: 15px;
@@ -196,7 +197,8 @@
     .generate-btn {
       width: 100%;
       padding: 12px;
-      background: var(--primary-color);
+        background: #d4ab21; /* Green colour */
+  border: none;
       border: none;
       border-radius: 12px;
       color: var(--secondary-color);
@@ -217,7 +219,8 @@
     }
 
     .code-display {
-      background: var(--hover-color);
+       background: #810404; /* Green colour */
+  border: none;
       padding: 12px;
       border-radius: 12px;
       text-align: center;
@@ -323,14 +326,17 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo"><i class="fas fa-robot"></i></div>
-      <h1 class="title">Knight Bot</h1>
+   
+        <div class="logo">
+    <img src="Hasuki-logo.png" alt="Logo" style="width: 70px; height: 70px; border-radius: 50%;" />
+  </div>
+      <h1 class="title">Hasuki Bot</h1>
       <p class="subtitle">Link your WhatsApp device</p>
       <div class="social-icons">
         <a href="https://www.youtube.com/@mr_unique_hacker?sub_confirmation=1" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
         <a href="https://t.me/+hxojkc7kaVViYzdl" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
         <a href="https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://github.com/mruniquehacker/Knightbot-md" target="_blank" class="github"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/mruniquehacker/Hasukibot-md" target="_blank" class="github"><i class="fab fa-github"></i></a>
       </div>
     </div>
 
@@ -346,7 +352,7 @@
 
     <div class="input-group" id="inputGroup">
       <label class="input-label">Enter your WhatsApp number with country code</label>
-      <input type="text" id="mobileNumber" class="input-field" placeholder="+917023951514" pattern="[+][0-9]{10,}" title="Please enter country code starting with + followed by number">
+      <input type="text" id="mobileNumber" class="input-field" placeholder="+94769xxxx51" pattern="[+][0-9]{10,}" title="Please enter country code starting with + followed by number">
     </div>
 
     <button class="generate-btn" id="submit">
@@ -373,7 +379,7 @@
     </button>
 
     <div class="footer">
-      <p>© 2025 Mr Unique Hacker | Knight Bot</p>
+      <p>© 2025 Zero Bug Zone | Hasuki Bot</p>
     </div>
   </div>
 

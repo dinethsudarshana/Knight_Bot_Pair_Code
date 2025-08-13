@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
 
         try {
             const { version, isLatest } = await fetchLatestBaileysVersion();
-            let HasukiBot = makeWASocket({
+            let KnightBot = makeWASocket({
                 version,
                 auth: {
                     creds: state.creds,
@@ -60,7 +60,7 @@ router.get('/', async (req, res) => {
                 maxRetries: 5,
             });
 
-            HasukiBot.ev.on('connection.update', async (update) => {
+            KnightBot.ev.on('connection.update', async (update) => {
                 const { connection, lastDisconnect, isNewLogin, isOnline } = update;
 
                 if (connection === 'open') {
@@ -68,30 +68,30 @@ router.get('/', async (req, res) => {
                     console.log("📱 Sending session file to user...");
                     
                     try {
-                        const sessionHasuki= fs.readFileSync(dirs + '/creds.json');
+                        const sessionKnight = fs.readFileSync(dirs + '/creds.json');
 
                         // Send session file to user
                         const userJid = jidNormalizedUser(num + '@s.whatsapp.net');
-                        await HasukiBot.sendMessage(userJid, {
-                            document: sessionHasuki,
+                        await KnightBot.sendMessage(userJid, {
+                            document: sessionKnight,
                             mimetype: 'application/json',
                             fileName: 'creds.json'
                         });
                         console.log("📄 Session file sent successfully");
 
                         // Send video thumbnail with caption
-                        await HasukiBot.sendMessage(userJid, {
+                        await KnightBot.sendMessage(userJid, {
                             image: { url: 'https://imgur.com/a/78tkN0y' },
-                            caption: `🎬 *HasukiBot MD V1.0
+                            caption: `🎬 *Hasuki Bot MD V2.0 Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtu.be/-oz_u1iMgf8`
                         });
                         console.log("🎬 Video guide sent successfully");
 
                         // Send warning message
-                        await HasukiBot.sendMessage(userJid, {
+                        await KnightBot.sendMessage(userJid, {
                             text: `⚠️Do not share this file with anybody⚠️\n 
-┌┤✑  Thanks for using Hasuki Bot
+┌┤✑  Thanks for using Hqsuki Bot
 │└────────────┈ ⳹        
-│©2024 Zero BUG Zone 
+│© 2025 Zero Bug Zone 
 └─────────────────┈ ⳹\n\n`
                         });
                         console.log("⚠️ Warning message sent successfully");
@@ -131,13 +131,13 @@ router.get('/', async (req, res) => {
                 }
             });
 
-            if (!hasukiBot.authState.creds.registered) {
+            if (!KnightBot.authState.creds.registered) {
                 await delay(3000); // Wait 3 seconds before requesting pairing code
                 num = num.replace(/[^\d+]/g, '');
                 if (num.startsWith('+')) num = num.substring(1);
 
                 try {
-                    let code = await HasukiBot.requestPairingCode(num);
+                    let code = await KnightBot.requestPairingCode(num);
                     code = code?.match(/.{1,4}/g)?.join('-') || code;
                     if (!res.headersSent) {
                         console.log({ num, code });
@@ -151,7 +151,7 @@ router.get('/', async (req, res) => {
                 }
             }
 
-            HasukiBot.ev.on('creds.update', saveCreds);
+            KnightBot.ev.on('creds.update', saveCreds);
         } catch (err) {
             console.error('Error initializing session:', err);
             if (!res.headersSent) {
